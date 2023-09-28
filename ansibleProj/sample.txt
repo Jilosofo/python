@@ -1,0 +1,5 @@
+Aqui nós estamos utilizando a estrutura With para abrir arquivo de texto com Python. Veja que dentro dessa estrutura nós temos 2 argumentos.
+
+O primeiro é o nome do arquivo (se estiver na mesma pasta basta colocar apenas o nome, sem o caminho completo), e o segundo é o que vamos fazer com o arquivo.
+
+Utilizando o “r” nós vamos ler o arquivo (R vem de Read, que significa ler em inglês), então vamos conseguir ler e mostrar na tela o conteúdo desse arquivo.
