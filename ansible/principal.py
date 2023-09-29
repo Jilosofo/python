@@ -2,6 +2,7 @@ from tkinter import *
 from ttkbootstrap.constants import *
 import ttkbootstrap as tb
 from comissoes import *
+from tkinter import messagebox
 
 #from comissoes import *
 #from plenario_comissoes 
@@ -35,7 +36,14 @@ def janela_principal():
     ## Button
 #def plenario1:
 
-    button1 = tb.Button(frame1,text="Plenário 1", bootstyle="sucess, outline", command=teste(plen=1))
+    #button1 = tb.Button(frame1,text="Plenário 1", bootstyle="sucess, outline", command=plenario(plen=1), plenario.janela_comissoes)
+    def plenario1():
+        #subprocess.run("ssh sweetth@192.168.1.99 sudo systemctl reboot", shell=True)
+        plenario1 = plenario(plen=1)
+        #print(plenario1)
+        plenario1.janela_comissoes()
+        #messagebox.showinfo('Plenário')
+    button1 = tb.Button(frame1,text="Plenário 1", bootstyle="sucess, outline", command=plenario1)
     button1.pack(pady=2, fill="x")
     button2 = tb.Button(frame1,text="Plenário 2", bootstyle="sucess, outline")
     button2.pack(pady=2, fill="x")
@@ -86,7 +94,7 @@ def janela_principal():
 
     janela.mainloop()
 
-teste1 = teste(plen="1")
+teste1 = plenario(plen="1")
 print("Teste")
 print(teste1.plen)
 print("=====")

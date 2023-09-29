@@ -23,7 +23,7 @@ class Pessoa:
 
 class teste:
     def __init__(self, plen):
-      self.plen = plen 
+        self.plen = plen 
 
     def teste1(self): # Lembrando que o def tem que está alinhado com def de cima
         print(f"Teste qual plenário: {self.plen}")
