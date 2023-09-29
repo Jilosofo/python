@@ -33,7 +33,9 @@ def janela_principal():
     texto_orietacao = Label(frame1, text="=======================")
     texto_orietacao.pack(pady=2)
     ## Button
-    button1 = tb.Button(frame1,text="Plenário 1", bootstyle="sucess, outline", command=janela_comissoes)
+#def plenario1:
+
+    button1 = tb.Button(frame1,text="Plenário 1", bootstyle="sucess, outline", command=teste(plen=1))
     button1.pack(pady=2, fill="x")
     button2 = tb.Button(frame1,text="Plenário 2", bootstyle="sucess, outline")
     button2.pack(pady=2, fill="x")
@@ -84,5 +86,9 @@ def janela_principal():
 
     janela.mainloop()
 
+teste1 = teste(plen="1")
+print("Teste")
+print(teste1.plen)
+print("=====")
 
 janela_principal()

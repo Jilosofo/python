@@ -8,6 +8,10 @@ def btn_browser():
     subprocess.run("xterm -e ansible-playbook -i /home/rodrigo/Documentos/ansible/ansible-pautaeletronica-des/hosts-tes /home/rodrigo/Documentos/ansible/ansible-pautaeletronica-des/pauta-playbook.yml", shell=True)
     messagebox.showinfo('SSH Paco', 'SSH Paco successfully!')
 
+class teste:
+    def __init__(self, plen):
+      self.plen = plen 
+  
 
 def janela_comissoes():
     janela = tb.Window(themename="superhero")
@@ -26,7 +30,7 @@ def janela_comissoes():
     label2.pack(pady=1)
 
     # default labelframe style Comissões
-    frame1 = tb.Labelframe(janela, bootstyle="light" , text="Plenário 1")
+    frame1 = tb.Labelframe(janela, bootstyle="light" , text="Plenário {plen}")
     #frame1.pack(side=LEFT, fill=BOTH, expand=True)
     frame1.pack(pady=1, padx=1)
     frame1.place(x=9,y=73, width=200, height=600)
@@ -59,7 +63,7 @@ def janela_comissoes():
 #btn2.pack(pady=2, fill="x")
 #btn2.grid(frame1,column=1, row=2, sticky='news')
 
-janela_comissoes()
+#janela_comissoes()
     ##10.245.128.90
 
     
