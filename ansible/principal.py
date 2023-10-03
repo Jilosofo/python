@@ -12,8 +12,17 @@ from tkinter import messagebox
 def janela_principal():
     janela = tb.Window(themename="superhero")
     janela.title("Ansible!")
+    window_height = 700
+    window_width = 900
+
+    screen_width = janela.winfo_screenwidth()
+    screen_height = janela.winfo_screenheight()
+
+    x_cordinate = int((screen_width/2) - (window_width/2))
+    y_cordinate = int((screen_height/2) - (window_height/2))
     #janela.iconbitmap('images/codemy.ico')
-    janela.geometry('750x750')
+    janela.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+    #janela.geometry('750x750')
 
     label1 = tb.Label(janela, text="Gerenciador Ansible", font=("Helvetica", 28), bootstyle="light")
     label1.pack(pady=10)

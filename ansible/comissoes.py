@@ -3,12 +3,17 @@ from ttkbootstrap.constants import *
 import ttkbootstrap as tb
 import subprocess
 from tkinter import messagebox 
+import sys
+
 
 def btn_browser():
     subprocess.run("xterm -e ansible-playbook -i /home/rodrigo/Documentos/ansible/ansible-pautaeletronica-des/hosts-tes /home/rodrigo/Documentos/ansible/ansible-pautaeletronica-des/pauta-playbook.yml", shell=True)
     messagebox.showinfo('SSH Paco', 'SSH Paco successfully!')
+    print('Fechando...')
+    sys.exit()
 
 class plenario:
+   
     def __init__(self, plen):
       self.plen = plen
 
@@ -16,7 +21,19 @@ class plenario:
         janela = tb.Window(themename="superhero")
         janela.title("Ansible!")
         #janela.iconbitmap('images/codemy.ico')
-        janela.geometry('750x750')
+        #janela.geometry('750x650')
+        window_height = 700
+        window_width = 900
+
+        screen_width = janela.winfo_screenwidth()
+        screen_height = janela.winfo_screenheight()
+
+        x_cordinate = int((screen_width/2) - (window_width/2))
+        y_cordinate = int((screen_height/2) - (window_height/2))
+    #janela.iconbitmap('images/codemy.ico')
+        janela.geometry("{}x{}+{}+{}".format(window_width, window_height, x_cordinate, y_cordinate))
+    #janela.geometry('750x750')
+
 
         label1 = tb.Label(janela, text="Gerenciador Ansible Comissões", font=("Helvetica", 28), bootstyle="light")
         label1.pack(pady=10)
@@ -25,7 +42,7 @@ class plenario:
         my_sep = tb.Separator(janela, bootstyle="warning", orient="horizontal")
         my_sep.pack(fill="x", padx="1") # fill x  dividi toda a janela
 
-        label2 = tb.Label(janela, text=f"---{self.plen}--", bootstyle="light") 
+        label2 = tb.Label(janela, text="-----", bootstyle="light") 
         label2.pack(pady=1)
 
         # default labelframe style Comissões
